@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CoffeService</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img src="./assets/logo.jpg" alt="logo hola cafe" />
+          <h3><span class="brand">Hola</span>Café</h3>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#carta">Carta</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="bienvenido">
+      <div class="contenido">
+        <h1>Bienvenido a <span class="brand">Hola</span>Café</h1>
+        <span class="barra"></span>
+      </div>
+    </section>
+
+    <section class="nosotros" id="nosotros">
+      <div class="container">
+        <div class="texto">
+          <h2>Nosotros</h2>
+          <div class="parrafos">
+            <p>
+              El Museo Larco Café-Restaurant ofrece a los visitantes una muestra
+              de la mejor gastronomía peruana e internacional, en un ambiente
+              romántico y acogedor.
+            </p>
+            <p>
+              Con una carta casera y variada, buscamos redescubrir los sabores,
+              productos y costumbres de las diferentes regiones del Perú,
+              confirmando así que este país es un extraordinario destino
+              gastronómico y cultural.
+            </p>
+            <p>
+              Entradas, piqueos, sándwiches, platos de fondo y postres son
+              elaborados con los más frescos ingredientes; y pueden ser
+              acompañados con bebidas frías o calientes de nuestra barra.
+            </p>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="./assets/nosotros-img.jpg" alt="imagen nosotros" />
+        </div>
+      </div>
+    </section>
+
+    <section class="carta" id="carta">
+      <h3>Carta</h3>
+      <div class="wrapper">
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <div class="carousel">
+          <img src="./assets/carta1r.jpg" alt="img" draggable="false" />
+          <img src="./assets/carta2r.jpg" alt="img" draggable="false" />
+          <img src="./assets/carta3r.jpg" alt="img" draggable="false" />
+          <img src="./assets/carta4r.jpg" alt="img" draggable="false" />
+          <img src="./assets/carta5r.jpg" alt="img" draggable="false" />
+          <img src="./assets/carta6r.jpg" alt="img" draggable="false" />
+          <img src="./assets/carta7r.jpg" alt="img" draggable="false" />
+          <!-- <img src="./assets/carta8r.jpg" alt="img" draggable="false" />
+          <img src="./assets/carta9r.jpg" alt="img" draggable="false" /> -->
+        </div>
+        <i id="right" class="fa-solid fa-angle-right"></i>
+      </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+      <h3>Contacto</h3>
+      <div class="cont-contacto">
+        <div class="informacion-contacto">
+          <p>
+            Estamos ubicados en los jardines del Museo Larco y el acceso al
+            restaurante es libre, previa reserva.
+          </p>
+          <p>
+            Si tienes preguntas o comentarios, no dudes en comunicarte con
+            nosotros.
+          </p>
+          <p> <i class="fa-solid fa-location-dot"></i>
+            Av. Bolívar 1515 (ingreso por la calle Navarra 169, frente al Parque
+            Larco), Pueblo Libre, Lima 21, Perú.
+          </p>
+          <p> <i class="fa-solid fa-phone"></i> (+51-1) 461-1312 | WhatsApp: (+51) 994-272-895</p>
+          <p> <i class="fa-solid fa-envelope"></i> reservas@cafedelmuseo.com</p>
+          <p> <i class="fa-brands fa-facebook"></i> /CafeMuseoLARCO</p>
+          <p> <i class="fa-brands fa-square-instagram"></i> /MuseoLarcoCafe</p>
+        </div>
+
+        <div class="formulario">
+          <form action="" method="POST" id="form">
+            <div class="form">
+              <h3>Escríbenos</h3>
+              <div class="grupo">
+                <input type="text" name="" id="name" required /><span
+                  class="barra"
+                ></span>
+                <label for="">Nombre</label>
+              </div>
+              <div class="grupo">
+                <input type="email" name="" id="name" required /><span
+                  class="barra"
+                ></span>
+                <label for="">Email</label>
+              </div>
+              <div class="grupo">
+                <input type="text" name="" id="name" required /><span
+                  class="barra"
+                ></span>
+                <label for="" class="mensaje">Mensaje</label>
+              </div>
+
+              <button type="submit">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>COPYRIGHT © 2022 <span>HOLA</span>CAFÉ</footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

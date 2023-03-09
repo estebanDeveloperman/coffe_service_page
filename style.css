@@ -1,0 +1,420 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+}
+
+:root {
+  --azul-tipo1: #07a0e1;
+  --azul-tipo2: #139de7;
+  --blanco-tipo1: #ffffff;
+  --blanco-tipo2: #fefefe;
+  --negro-especial: #020202;
+  --colorTextos: #49454567;
+}
+
+/* em -> tamaño relativo al tamaño de la fuente */
+h1 {
+  font-size: 3.5em;
+}
+h2 {
+  font-size: 2.7em;
+}
+h3 {
+  font-size: 2em;
+}
+p {
+  font-size: 1.25em;
+}
+ul {
+  list-style: none;
+}
+li {
+  font-size: 1.25em;
+}
+a {
+  text-decoration: none;
+}
+
+.container {
+  /* para que no se pegue en la esquina cuando pasa los 1400px */
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* header */
+header {
+  background-color: rgb(245, 245, 245);
+  position: fixed;
+  width: 100%;
+
+  z-index: 10;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+header .logo img {
+  height: 60px;
+  border-radius: 999px;
+  margin-right: 6.2px;
+}
+
+header .logo h3 .brand {
+  color: var(--azul-tipo2);
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav ul li {
+  padding: 5px 12px;
+}
+
+header nav ul li a {
+  font-weight: bold;
+  color: var(--negro-especial);
+  transition: 0.2s;
+}
+
+header nav ul li a:hover {
+  color: var(--azul-tipo2);
+}
+
+/* section bienvenido */
+.bienvenido {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 100px 0 20px 0;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("./assets/bienvenido.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.bienvenido .contenido {
+  margin-bottom: 50px;
+}
+
+.bienvenido h1 {
+  color: var(--blanco-tipo1);
+  cursor: pointer;
+  transition: 0.5s;
+  display: inline-block;
+}
+
+.bienvenido h1 .brand {
+  color: var(--azul-tipo2);
+}
+
+.barra {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.barra::before {
+  content: "";
+  height: 2px;
+  width: 0%;
+  bottom: 0;
+  position: absolute;
+  background: linear-gradient(to right, var(--azul-tipo1), #4568dc);
+  transition: 0.3s ease width;
+  left: 0;
+}
+
+.bienvenido h1:hover ~ .barra::before {
+  width: 100%;
+}
+
+/* Nosotros */
+.nosotros {
+  padding: 60px 165px;
+}
+
+.nosotros .container {
+  display: flex;
+  gap: 80px;
+}
+
+.nosotros .texto h2 {
+  font-size: 3em;
+  margin: 24px 0;
+  color: var(--azul-tipo2);
+  letter-spacing: 5px;
+}
+
+.nosotros .texto p {
+  margin: 0 0 16.5px;
+  font-weight: lighter;
+  font-size: 1.35em;
+}
+
+.nosotros .img-container img {
+  height: 420px;
+  width: auto;
+}
+
+/* carta */
+.carta {
+    /* arriba, derecha, abajo, izquierda */
+    padding: 45px 100px 85px 100px;
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.carta h3 {
+    color: var(--azul-tipo2);
+    font-size: 3em;
+    margin-bottom: 25px;
+}
+
+.wrapper {
+  display: flex;
+  max-width: 1200px;
+  position: relative;
+}
+.wrapper i {
+  top: 50%;
+  height: 44px;
+  width: 44px;
+  color: #343f4f;
+  cursor: pointer;
+  font-size: 1.15rem;
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active {
+  transform: translateY(-50%) scale(0.9);
+}
+.wrapper i:hover {
+  background: #f2f2f2;
+}
+.wrapper i:first-child {
+  left: -22px;
+  display: none;
+}
+.wrapper i:last-child {
+  right: -22px;
+}
+.wrapper .carousel {
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+.carousel.dragging {
+  cursor: grab;
+  scroll-behavior: auto;
+}
+.carousel.dragging img {
+  pointer-events: none;
+}
+.carousel img {
+  height: 340px;
+  object-fit: cover;
+  user-select: none;
+  margin-left: 14px;
+  width: calc(100% / 3);
+}
+.carousel img:first-child {
+  margin-left: 0px;
+}
+
+@media screen and (max-width: 900px) {
+  .carousel img {
+    width: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .carousel img {
+    width: 100%;
+  }
+}
+
+/* Contacto */
+.contacto {
+    padding: 75px 150px;
+}
+
+.contacto h3 {
+    font-size: 3em;
+    /* margin: 24px 0; */
+    color: var(--azul-tipo2);
+}
+
+.contacto .cont-contacto {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    transform: translateY(-25px);
+}
+
+.contacto .cont-contacto .informacion-contacto {
+    font-weight: lighter;
+}
+
+.contacto .cont-contacto .informacion-contacto p {
+    margin: 0 0 16.5px;
+    font-size: 1.35em;
+}
+
+form {
+    background: #fff;
+    padding: 40px 0;
+    box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    border: 1px solid #5e5d5d;
+    padding: 15px 20px;
+}
+
+.form {
+    width: 100%;
+    margin: auto;
+}
+
+form .grupo {
+    position: relative;
+    margin: 30px 10px;
+}
+
+input {
+    background: none;
+    color: #c6c6c6;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px; /* arriba, derecha, abajo, izquierda */
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--colorTextos);
+}
+
+input:focus {
+    outline: none;
+    color: #5e5d5d;
+}
+
+label {
+    color: var(--colorTextos);
+    font-size: 16px;
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    transition: 0.5s ease all;
+    pointer-events: none;
+}
+
+input:focus~label,
+input:valid~label { /* cuando el input esté en focus aplica las siguientes propiedades a su hermano label */
+/* y si el input es valido tambien el label aplicale esto */
+    top: -14px;
+    font-size: 12px;
+    color: #2196f3;
+}
+
+.barra {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.barra::before {
+    content: "";
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(to right, var(--azul-tipo1), #4568dc);
+    transition: 0.3s ease width;
+    left: 0;
+}
+
+input:focus~.barra::before { /* la barra está en 0%, si el input está en focus se completa al 100% */
+    width: 100%;
+}
+
+button {
+    font-family: 'Roboto';
+    background: #4568dc;
+    background: -webkit-linear-gradient(to right, var(--azul-tipo1), #4568dc);
+    background: linear-gradient(to right, var(--azul-tipo2), #4568dc);
+
+    border: none;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    color: #fff;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: -webkit-linear-gradient(to left, var(--azul-tipo1), #4568dc);
+    background: linear-gradient(to left, var(--azul-tipo2), #4568dc);
+}
+
+@media screen and (max-width: 500px) {
+
+    form {
+        width: 80%;
+    }
+
+}
+
+/* Footer */
+footer {
+    background-color: rgb(245, 245, 245);
+    padding: 20px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer span {
+    color: var(--azul-tipo2);
+    margin-left: 4.2px;
+    margin-right: 2.8px;
+}
